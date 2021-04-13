@@ -1,0 +1,24 @@
+{
+  "name": "clean-11ty-dc-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "eleventy-plugin-tailwindcss": "^0.3.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  },
+  "scripts": {
+		"clean": "rimraf dist",
+		"start": "npm run serve",
+		"serve": "npm run clean && cross-env NODE_ENV=development eleventy --serve",
+		"watch": "npm run clean && cross-env NODE_ENV=development eleventy --watch",
+		"build": "npm run clean && cross-env NODE_ENV=production eleventy",
+		"debug": "DEBUG=Eleventy* npm run build"
+  },
+  "author": "",
+  "license": "ISC"
+}
